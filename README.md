@@ -1,1 +1,1 @@
-# setup
+# Configuration files for set-up

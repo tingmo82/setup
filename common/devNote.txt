@@ -1,0 +1,22 @@
+
+===== [ vim configuration ] =======================================================================
+1. vundle installation
+  - git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
+2. Plugin installation
+  - :PluginInstall
+===================================================================================================
+
+===== [ Shell Command ] ===========================================================================
+- Threads of Linux app
+  : pidof & ps -T -p [pid]
+- Systemd
+  : systemctl stop/start/restart [process]
+- Searching specific package
+  : apt-cache search [pacakage, (ex, exFat)]
+- Installing exFAT file system
+  : apt-get install exfat-fuse exfat-utils
+- Viewing a log of shell script
+  : bash -x ./[executable file]
+- Ethernet
+  : ifconfig eth0 192.168.0.2 up
+===================================================================================================
