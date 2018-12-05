@@ -7,16 +7,84 @@
 ===================================================================================================
 
 ===== [ Shell Command ] ===========================================================================
-- Threads of Linux app
-  : pidof & ps -T -p [pid]
-- Systemd
-  : systemctl stop/start/restart [process]
 - Searching specific package
-  : apt-cache search [pacakage, (ex, exFat)]
+  : (Ubuntu) apt-cache search [pacakage, (ex, exFat)]
 - Installing exFAT file system
-  : apt-get install exfat-fuse exfat-utils
+  : (Ubuntu) apt-get install exfat-fuse exfat-utils
 - Viewing a log of shell script
   : bash -x ./[executable file]
 - Ethernet
   : ifconfig eth0 192.168.0.2 up
+- Open Console
+  : sudo minicom -D /dev/ttyUSB0
+- Convert Text files 
+  : Windows => Unix : dos2unix myFile.txt
+    Unix => Windows : unix2dos myFile.txt
+- Disk Usage per User
+  : du -s /home/ID
+- Counting the file including sub-dirs
+  : find build/ -type f | wc -l
+===================================================================================================
+
+===== [ ARM Shell Command ] =======================================================================
+- Threads of Linux app
+  : pidof & ps -T -p [pid]
+- Log Level 
+  : dmesg -n5
+- Systemd
+  : systemctl stop/start/restart [service]
+    systemctl status [service]
+    systemctl enable [service]
+===================================================================================================
+
+===== [ Build Command ] ===========================================================================
+- Print Logs of build system 
+  : make 2>&1 | tee temp.log  2(stderr), 1(stdout)
+===================================================================================================
+
+===== [ Yocto Command ] ===========================================================================
+- List of the tasks available for bitbake
+  : bitbake <recipe> -c listtasks
+- Search the necessary recipe
+  : bitbake-layers show-recipes | grep -A 1 xxxx
+===================================================================================================
+
+===== [ ADB Command ] =============================================================================
+- Find BT address
+  : adb shell settings get secure bluetooth_address
+===================================================================================================
+
+===== [ Git Command ] =============================================================================
+- Reverting remote repository 
+  : git reset --hard HEAD  =>  git push origin -f or git push --force
+- Merging upstream repository
+  : git remote -v
+    git remote add upstream https://github.com/frogbywyplay/genbox_ov-community.git
+    git fetch upstream
+    git branch -a ( upstream 확인 )
+    git merge upstream/master
+- Checkout
+  : git checkout tags/<tag_name>
+    git checkout tags/<tag_name> -b <branch_name>
+    git checkout -b <branch_name> <remotes_branch_name>
+- Creating patch file
+  : git diff --no-prefix > patchfile
+- Patching File
+  : patch -p0 < patchfile
+- Creating the diff files
+  : diff -aurN orginfile fixedfile > patchfile
+===================================================================================================
+
+===== [ DBUS Command ] ============================================================================
+dbus-monitor --system --monitor &
+dbus-send --system --print-reply --reply-timeout=3000 --type=method_call --dest=telechips.bluetooth.application /telechips/bluetooth/application bluetoothapplication.event.mrethod_bluetooth_get_macaddr boolean:$node uint64:$node1
+dbus-send --system --type=method_call --dest=telechips.bluetooth.application /telechips/bluetooth/application bluetoothapplication.event.method_bluetooth_disconnect_device
+dbus-send --system --type=signal --dest=telechips.androidauto.player /telechips/androidauto/player androidautoplayer.event.signal_androidauto_player_start
+===================================================================================================
+
+===== [ Vim configuration ] =======================================================================
+1. vundle installation
+  : git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
+2. Plugin installation
+  : PluginInstall
 ===================================================================================================
