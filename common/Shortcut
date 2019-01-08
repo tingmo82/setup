@@ -1,0 +1,35 @@
+단축키
+
+[ Android Studio ]
+crtl+r : 바꾸기
+ctrl+space : 자동완성
+crtl+shift+z : redo
+ctrl+alt(option)+l : 인덴트 정렬
+shift+esc : 창 접기
+ctrl+'+' : 펼치기
+command+delete : 라인 삭제
+alt(option)+enter : 문제 수정 추천
+alt(command)+F7 : 참조검색
+ctrl+shift+f : 통합검색
+shift x2 : 통합검색
+ctrl+shift+h : 메소드 계층 확인
+ctrl+alt+h : 콜 계층 확인
+ctrl(command)+b : 선언부로 이동
+ctrl+alt(option)+o : import 항목 정리
+ctrl+/ : 주석처리
+ctrl+F9 : 프로젝트 빌드
+alt(command)+insert(n) : generate
+
+[ XCode ]
+esc : 자동완성
+ctrl + . : 다음 제안
+command + option + 좌우방향키 : 이전/다음 파일
+command + option + 위아래방향키 : 헤더/소스 파일
+command + [ or ] : 좌우측 들여쓰기
+command + shift + f : 전체 찾기
+
+[ Mac ]
+Com + Opt + esc : 강제종료창
+Com + Shift + 3 : 화면 전체 캡쳐 후 테스트탑 저장
+Com + Shift + 4 : 선택 영역 캡쳐 후 테스트탑 저장
+Com + Shift + ctrl + 4 : 선택 영역 캡쳐 후 클립보드에 저장
