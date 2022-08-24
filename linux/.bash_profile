@@ -34,6 +34,12 @@ alias push='git pull origin master && git push origin master'
 alias pull='git pull origin master'
 alias clone='git clone $1'
 
+funcCodePush() {
+    git push origin HEAD:refs/for/$1%r=yhkim602@telechips.com,r=sjw@telechips.com,r=hskim@telechips.com,r=shenjus@telechips.com,r=mongma@telechips.com,r=jhjeon26@telechips.com,r=ch.lee@telechips.com,r=lyma@telechips.com,r=jihoon.kim@telechips.com
+}
+
+alias codepush=funcCodePush
+
 _fab_completion() {
     COMPREPLY=()
 
