@@ -52,6 +52,12 @@
 ===== [ ADB Command ] =============================================================================
 - Find BT address
   : adb shell settings get secure bluetooth_address
+- Execute Activity
+  : adb shell am start -a android.intent.action.MAIN -n com.example.echo/com.example.echo.demoactivity
+- Execute Service
+  : adb shell am startservice -n com.example.echo/com.example.echo.echoservice
+- Execute Broadcast
+  : adb shell am broadcast -a android.accounts.LOGIN_ACCOUNTS_CHANGED
 ===================================================================================================
 
 ===== [ Git Command ] =============================================================================
@@ -67,12 +73,29 @@
   : git checkout tags/<tag_name>
     git checkout tags/<tag_name> -b <branch_name>
     git checkout -b <branch_name> <remotes_branch_name>
+- Creating a new branch to remote
+  : git checkout -b <branch_name>
+    Never commit 
+    git push origin <branch_name>
+- Deleting a remote branch
+  : git push origin --delete <branch_name>
+- Pushing larget amount of data
+  : git push --no-thin
 - Creating patch file
   : git diff --no-prefix > patchfile
 - Patching File
-  : patch -p0 < patchfile
+  : patch -p1 < patchfile
 - Creating the diff files
   : diff -aurN orginfile fixedfile > patchfile
+- Recording the current state of the working directory
+  : git stash
+- Applying it on top of the current working tree state
+  : git stash pop 
+===================================================================================================
+
+===== [ Linux Command ] ===========================================================================
+- Excluding the specific files
+  : grep -rsn --exclude='*.html' --exclude='*.pdf' '_31_'
 ===================================================================================================
 
 ===== [ DBUS Command ] ============================================================================
@@ -87,4 +110,9 @@ dbus-send --system --type=signal --dest=telechips.androidauto.player /telechips/
   : git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
 2. Plugin installation
   : PluginInstall
+===================================================================================================
+
+===== [ Teraterm Terminal ] =======================================================================
+1. Automatically Login
+  : B170091@192.168.33.210 /ssh2 /user=B170091 /passwd=jungmo0527^^ /auth=password
 ===================================================================================================
